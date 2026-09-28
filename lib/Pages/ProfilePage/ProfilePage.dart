@@ -1,0 +1,133 @@
+import 'package:flutter/material.dart';
+import 'package:snapshop/Config/Colors.dart';
+import 'package:snapshop/Config/Images.dart';
+import 'package:snapshop/Pages/ProfilePage/widgets/AddressSection.dart';
+import 'package:snapshop/Pages/ProfilePage/widgets/DOBAndGender.dart';
+import 'package:snapshop/Pages/ProfilePage/widgets/EditProfAndChangePass.dart';
+import 'package:snapshop/Pages/ProfilePage/widgets/PaymentMethods.dart';
+import 'package:snapshop/Pages/ProfilePage/widgets/PhoneNumber.dart';
+import 'package:snapshop/Pages/ProfilePage/widgets/WishlistSection.dart';
+import 'package:snapshop/Pages/ProfilePage/widgets/YourOrders.dart';
+import 'package:snapshop/Widgets/MyBottomNavigationBar.dart';
+
+class ProfilePage extends StatelessWidget {
+  const new({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: primaryGreen,
+      appBar: AppBar(
+        backgroundColor: primaryGreen,
+        leading: IconButton(
+          onPressed: () {},
+          icon: Image.asset(AssetsImage.backIcon, width: 23, color: white),
+        ),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(Icons.person, color: white, size: 23),
+            Text(
+              "Your Profile",
+              style: TextStyle(
+                color: white,
+                fontFamily: "Outfit",
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ],
+        ),
+        centerTitle: true,
+      ),
+      body: Stack(
+        alignment: Alignment.center,
+        children: [
+          Container(
+            height: double.infinity,
+            width: double.infinity,
+            margin: EdgeInsets.only(top: 40),
+            decoration: BoxDecoration(
+              color: bgGrey,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20),
+                topRight: Radius.circular(20),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 0,
+            left: 60,
+            child: CircleAvatar(
+              radius: 45,
+              backgroundColor: Colors.red,
+              child: CircleAvatar(
+                backgroundImage: AssetImage(AssetsImage.boyPic),
+                radius: 43,
+              ),
+            ),
+          ),
+          Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 90, left: 35),
+                    child: Column(
+                      children: [
+                        Text(
+                          "Suman Singha",
+                          style: TextStyle(
+                            color: black,
+                            fontFamily: "Outfit",
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        Text(
+                          "suman01@gmail.com",
+                          style: TextStyle(
+                            color: black,
+                            fontFamily: "Outfit",
+                            fontSize: 15,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  EditProfileAndChangePasswordSection(),
+                ],
+              ),
+              SizedBox(height: 15),
+              Expanded(
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.vertical,
+                  child: Column(
+                    children: [
+                      DateOfBirthAndGenderSection(),
+                      SizedBox(height: 20),
+                      PhoneNumberSection(),
+                      SizedBox(height: 15),
+                      AddressSection(),
+                      SizedBox(height: 15),
+                      PaymentMethods(),
+                      SizedBox(height: 15),
+                      YourOrdersSection(),
+                      SizedBox(height: 15),
+                      WishlistSection(),
+                      SizedBox(height: 20),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
