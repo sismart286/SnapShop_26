@@ -26,6 +26,7 @@ class AssetsImage {
   static const tshirt = "assets/icons/tshirt.png";
   static const tshirt1 = "assets/icons/tshirt1.png";
   static const visible = "assets/icons/visible.png";
+  static const editProfileIcon = "assets/icons/EditProfileIcon.png";
 
   //IMAGES PATH
   static const americanexpress = "assets/images/americanexpress.png";

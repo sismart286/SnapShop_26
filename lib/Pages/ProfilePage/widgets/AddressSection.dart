@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:snapshop/Config/Colors.dart';
 import 'package:snapshop/Widgets/MiniEditButton.dart';
 
-Widget AddressSection() {
+Widget AddressSection({double? horizontalPadding = 15}) {
   return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 15),
+    padding: EdgeInsets.symmetric(horizontal: horizontalPadding!),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

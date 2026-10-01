@@ -8,7 +8,6 @@ import 'package:snapshop/Pages/ProfilePage/widgets/PaymentMethods.dart';
 import 'package:snapshop/Pages/ProfilePage/widgets/PhoneNumber.dart';
 import 'package:snapshop/Pages/ProfilePage/widgets/WishlistSection.dart';
 import 'package:snapshop/Pages/ProfilePage/widgets/YourOrders.dart';
-import 'package:snapshop/Widgets/MyBottomNavigationBar.dart';
 
 class ProfilePage extends StatelessWidget {
   const new({super.key});

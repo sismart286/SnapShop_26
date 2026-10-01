@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 Widget CustomButton({
   double? height = 50,
-  double? width = double.infinity,
+  double? width = 250,
   double? radius = 10,
-  Color? btnTextColor = Colors.blue,
+  Color? btnTextColor = Colors.white,
   double? btnTextSize = 15,
   Color? btnColor = Colors.black,
   String? btnName = "Custom Button",

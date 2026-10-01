@@ -4,8 +4,8 @@ import 'package:snapshop/Config/Colors.dart';
 
 Widget MyTextField({
   double? size = 10,
-  String? labelName,
-  String? hintText,
+  String? labelName = "TextField",
+  String? hintText = "Type here",
   bool? hideText = false,
 }) {
   RxBool isVisible = true.obs;

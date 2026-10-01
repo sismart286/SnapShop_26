@@ -3,9 +3,9 @@ import 'package:snapshop/Config/Colors.dart';
 
 Widget PrimaryButton({
   VoidCallback? onPressed,
-  String? btnName,
-  double? width,
-  double? height,
+  String? btnName = "Primary Button",
+  double? width = 200,
+  double? height = 55,
 }) {
   return FilledButton(
     onPressed: onPressed,
