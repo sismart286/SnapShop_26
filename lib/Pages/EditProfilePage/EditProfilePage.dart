@@ -7,8 +7,7 @@ import 'package:snapshop/Config/Images.dart';
 import 'package:snapshop/Pages/EditProfilePage/Widgets/GenderSection.dart';
 import 'package:snapshop/Pages/EditProfilePage/Widgets/NameAndDOBEdit.dart';
 import 'package:snapshop/Pages/EditProfilePage/Widgets/PhoneEmailPasswordEditSection.dart';
-import 'package:snapshop/Pages/ProfilePage/widgets/AddressSection.dart';
-import 'package:snapshop/Widgets/CustomButton.dart';
+import 'package:snapshop/Widgets/AddressSection.dart';
 import 'package:snapshop/Widgets/PrimaryButton.dart';
 
 class EditProfilePage extends StatelessWidget {

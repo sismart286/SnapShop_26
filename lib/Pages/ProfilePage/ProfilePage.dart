@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:snapshop/Config/Colors.dart';
 import 'package:snapshop/Config/Images.dart';
-import 'package:snapshop/Pages/ProfilePage/widgets/AddressSection.dart';
+import 'package:snapshop/Pages/Home/HomePage.dart';
+import 'package:snapshop/Widgets/AddressSection.dart';
 import 'package:snapshop/Pages/ProfilePage/widgets/DOBAndGender.dart';
 import 'package:snapshop/Pages/ProfilePage/widgets/EditProfAndChangePass.dart';
 import 'package:snapshop/Pages/ProfilePage/widgets/PaymentMethods.dart';
@@ -19,7 +21,9 @@ class ProfilePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: primaryGreen,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.offAll(() => HomePage());
+          },
           icon: Image.asset(AssetsImage.backIcon, width: 23, color: white),
         ),
         title: Row(

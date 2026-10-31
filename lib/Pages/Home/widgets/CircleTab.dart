@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:snapshop/Config/Colors.dart';
 
-Widget circleTab({required String image, required String labelName}) {
+Widget circleTab({
+  required String image,
+  required String labelName,
+  VoidCallback? onTap,
+}) {
   return InkWell(
-    onTap: () {},
+    onTap: onTap,
     child: Column(
       children: [
         Container(

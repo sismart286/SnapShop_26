@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:snapshop/Config/Colors.dart';
+import 'package:snapshop/Pages/AddressPage/AddressPage.dart';
 
 Widget MiniEditButton() {
   return Positioned(
     right: 0,
     child: InkWell(
-      onTap: () {},
+      onTap: () {
+        Get.to(() => AddressPage());
+      },
       child: Container(
         height: 30,
         width: 65,

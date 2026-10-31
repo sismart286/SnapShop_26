@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:snapshop/Config/Colors.dart';
 import 'package:snapshop/Config/Images.dart';
+import 'package:snapshop/Pages/CategoryPage/CategoryPage.dart';
 import 'package:snapshop/Pages/Home/widgets/CircleTab.dart';
 
 Widget categoryBar() {
@@ -23,19 +25,61 @@ Widget categoryBar() {
       scrollDirection: Axis.horizontal,
       physics: BouncingScrollPhysics(),
       children: [
-        circleTab(image: AssetsImage.tshirt, labelName: "Fashion"),
+        circleTab(
+          image: AssetsImage.tshirt,
+          labelName: "Fashion",
+          onTap: () {
+            Get.to(() => CategoryPage());
+          },
+        ),
         SizedBox(width: 10),
-        circleTab(image: AssetsImage.laptop, labelName: "Electronics"),
+        circleTab(
+          image: AssetsImage.laptop,
+          labelName: "Electronics",
+          onTap: () {
+            Get.to(() => CategoryPage());
+          },
+        ),
         SizedBox(width: 10),
-        circleTab(image: AssetsImage.groceryIcon, labelName: "Grocery"),
+        circleTab(
+          image: AssetsImage.groceryIcon,
+          labelName: "Grocery",
+          onTap: () {
+            Get.to(() => CategoryPage());
+          },
+        ),
         SizedBox(width: 10),
-        circleTab(image: AssetsImage.bicepIcon, labelName: "   Health   "),
+        circleTab(
+          image: AssetsImage.bicepIcon,
+          labelName: "   Health   ",
+          onTap: () {
+            Get.to(() => CategoryPage());
+          },
+        ),
         SizedBox(width: 10),
-        circleTab(image: AssetsImage.glowingSkinIcon, labelName: "  Beauty  "),
+        circleTab(
+          image: AssetsImage.glowingSkinIcon,
+          labelName: "  Beauty  ",
+          onTap: () {
+            Get.to(() => CategoryPage());
+          },
+        ),
         SizedBox(width: 10),
-        circleTab(image: AssetsImage.decoration, labelName: "Decoration"),
+        circleTab(
+          image: AssetsImage.decoration,
+          labelName: "Decoration",
+          onTap: () {
+            Get.to(() => CategoryPage());
+          },
+        ),
         SizedBox(width: 10),
-        circleTab(image: AssetsImage.bookIcon, labelName: " Books "),
+        circleTab(
+          image: AssetsImage.bookIcon,
+          labelName: " Books ",
+          onTap: () {
+            Get.to(() => CategoryPage());
+          },
+        ),
         SizedBox(width: 10),
       ],
     ),

@@ -18,6 +18,7 @@ class AssetsImage {
   static const laptop = "assets/icons/laptop.png";
   static const decoration = "assets/icons/livingRoom.png";
   static const pin = "assets/icons/pin.png";
+  static const pinBigIcon = "assets/icons/PinBigIcon.png";
   static const rupee = "assets/icons/rupee.png";
   static const menu = "assets/icons/menuIcon.png";
   static const settings = "assets/icons/settings.png";
@@ -27,6 +28,12 @@ class AssetsImage {
   static const tshirt1 = "assets/icons/tshirt1.png";
   static const visible = "assets/icons/visible.png";
   static const editProfileIcon = "assets/icons/EditProfileIcon.png";
+  static const dorpDownIcon = "assets/icons/dorpDown.png";
+  static const checkIcon = "assets/icons/check.png";
+  static const wishlistIcon = "assets/icons/wishlist.png";
+  static const emptyWishlistIcon = "assets/images/emptyWishlist.png";
+  static const noOrdersIcon = "assets/icons/noOrders.png";
+  static const orderBoxIcon = "assets/icons/orderBox.png";
 
   //IMAGES PATH
   static const americanexpress = "assets/images/americanexpress.png";
@@ -59,7 +66,8 @@ class AssetsImage {
   static const phonepay = "assets/images/phonepay.png";
   static const rupay = "assets/images/rupay.png";
   static const securePassword = "assets/images/secure-password.png";
-  static const snapshopLogo = "assets/images/SnapshopLogo.png";
+  static const snapshopLogo1 = "assets/images/SnapshopLogo1.png";
+  static const snapshopLogo2 = "assets/images/SnapshopLogo2.png";
   static const snapBoxLogo = "assets/images/SnapBoxLogo.png";
   static const snapshopBigLogo = "assets/images/SnapShopBigLogo.png";
   static const snapShopVeryBigLogo = "assets/images/SnapShopVeryBigLogo.png";

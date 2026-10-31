@@ -7,6 +7,7 @@ Widget MyTextField({
   String? labelName = "TextField",
   String? hintText = "Type here",
   bool? hideText = false,
+  Color? labelTextColor = black,
 }) {
   RxBool isVisible = true.obs;
 
@@ -18,7 +19,11 @@ Widget MyTextField({
           children: [
             Text(
               labelName!,
-              style: TextStyle(fontFamily: "Outfit", fontSize: 15),
+              style: TextStyle(
+                fontFamily: "Outfit",
+                fontSize: 15,
+                color: labelTextColor,
+              ),
             ),
           ],
         ),

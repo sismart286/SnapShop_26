@@ -3,17 +3,30 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:snapshop/Config/Colors.dart';
+import 'package:snapshop/Config/Images.dart';
 import 'package:snapshop/Controllers/BottonNavBarController.dart';
+import 'package:snapshop/Pages/CartPage/CartPage.dart';
+import 'package:snapshop/Pages/Home/HomePage.dart';
+import 'package:snapshop/Pages/OrderPage/YourOrdersPage.dart';
+import 'package:snapshop/Pages/WishListPage/WishListPage.dart';
 
-Widget MyBottomNavigationBar(List<String> bottomNavIcons) {
+Widget MyBottomNavigationBar() {
+  List<String> bottomNavIcons = [
+    AssetsImage.homeIcon,
+    AssetsImage.heartIcon,
+    AssetsImage.shoppingCart,
+    AssetsImage.orderIcon,
+  ];
+
   BottonNavBarController bottonNavBarController = Get.put(
     BottonNavBarController(),
   );
   bool isActive = false;
 
   return Container(
-    height: 60,
-    margin: EdgeInsets.symmetric(horizontal: 16),
+    height: 50,
+    padding: EdgeInsets.symmetric(horizontal: 10),
+    margin: EdgeInsets.symmetric(horizontal: 20),
     decoration: BoxDecoration(
       color: lowBlack,
       borderRadius: BorderRadius.circular(40),
@@ -29,11 +42,21 @@ Widget MyBottomNavigationBar(List<String> bottomNavIcons) {
             onTap: () {
               bottonNavBarController.selectedIndex.value = index;
               log("bottomNavIcon is clicked! ${entry.key}");
+              if (index == 0) {
+                Get.offAll(() => HomePage());
+                index = 0;
+              } else if (index == 1) {
+                Get.to(() => WishListPage());
+              } else if (index == 2) {
+                Get.to(() => CartPage());
+              } else if (index == 3) {
+                Get.to(() => YourOrdersPage());
+              }
             },
             child: Container(
               padding: EdgeInsets.all(10),
-              height: 50,
-              width: 50,
+              height: 40,
+              width: 40,
               decoration: BoxDecoration(
                 color: isActive ? primaryNormalGreen : white,
 

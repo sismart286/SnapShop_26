@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:snapshop/Config/Colors.dart';
+import 'package:snapshop/Pages/ChangePassword/ChangePasswordPage.dart';
 import 'package:snapshop/Pages/EditProfilePage/EditProfilePage.dart';
 import 'package:snapshop/Widgets/CustomButton.dart';
 
@@ -37,7 +38,9 @@ Widget EditProfileAndChangePasswordSection() {
           btnTextSize: 13,
           btnColor: midBlack,
           btnName: "Change Password",
-          onTap: () {},
+          onTap: () {
+            Get.to(() => ChangePasswordPage());
+          },
         ),
       ],
     ),

@@ -12,6 +12,7 @@ const primaryNormalGreen = Color(0xff00E20F);
 const primaryDeepGreen = Color(0xff00930A);
 const primaryLightGreen = Color(0xff65FF6F);
 const primaryExtraLightGreen = Color(0x2200930A);
+const primarySoftGreen = Color(0xff54D660);
 
 //BLACK
 const black = Colors.black;

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:snapshop/Config/Colors.dart';
 import 'package:snapshop/Config/Images.dart';
+import 'package:snapshop/Widgets/PriceWidget.dart';
 
 Widget ProductOffersTime() {
   return Padding(
@@ -12,7 +13,7 @@ Widget ProductOffersTime() {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "Today's Offer",
+              "Smart Phones",
               style: TextStyle(
                 fontFamily: "Outfit",
                 fontSize: 16,
@@ -72,17 +73,7 @@ Widget ProductOffersTime() {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Image.asset(AssetsImage.rupee, width: 16),
-                          Text(
-                            "1,34,000",
-                            maxLines: 2,
-                            textAlign: TextAlign.center,
-                            overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w800,
-                            ),
-                          ),
+                          PriceWidget(price: "1,34,000"),
                           SizedBox(width: 5),
                           Container(
                             padding: EdgeInsets.symmetric(horizontal: 2),

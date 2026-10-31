@@ -2,14 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:snapshop/Config/Colors.dart';
 import 'package:snapshop/Widgets/MiniEditButton.dart';
 
-Widget AddressSection({double? horizontalPadding = 15}) {
+Widget AddressSection({
+  double? horizontalPadding = 15,
+  String? addressBoxName = "Default address",
+}) {
   return Padding(
     padding: EdgeInsets.symmetric(horizontal: horizontalPadding!),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "Default address",
+          addressBoxName!,
           style: TextStyle(
             color: black,
             fontFamily: "Outfit",

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:snapshop/Config/Images.dart';
+import 'package:snapshop/Pages/AddressPage/AddressPage.dart';
+import 'package:snapshop/Pages/ProfilePage/ProfilePage.dart';
 
 Widget homeHeader(BuildContext context) {
   return Padding(
@@ -11,13 +14,15 @@ Widget homeHeader(BuildContext context) {
           children: [
             Image.asset(AssetsImage.snapBoxLogo, width: 50),
 
-            Image.asset(AssetsImage.snapshopLogo, width: 100),
+            Image.asset(AssetsImage.snapshopLogo1, width: 100),
           ],
         ),
         Row(
           children: [
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Get.to(() => AddressPage());
+              },
               child: Row(
                 children: [
                   Image.asset(AssetsImage.pin, width: 15),
@@ -30,14 +35,17 @@ Widget homeHeader(BuildContext context) {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
+                  SizedBox(width: 5),
+                  Image.asset(AssetsImage.dropDown),
                 ],
               ),
             ),
-            SizedBox(width: 5),
-            Image.asset(AssetsImage.dropDown),
+
             SizedBox(width: 10),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Get.to(() => ProfilePage());
+              },
               child: CircleAvatar(
                 child: Image.asset(
                   AssetsImage.boyPic,
