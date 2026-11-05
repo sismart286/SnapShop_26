@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:snapshop/Config/Colors.dart';
+import 'package:snapshop/Config/Images.dart';
 import 'package:snapshop/Pages/CartPage/Widgets/CartProductWidget.dart';
 import 'package:snapshop/Widgets/MyBottomNavigationBar.dart';
 import 'package:snapshop/Widgets/PrimaryButton.dart';
@@ -14,12 +16,20 @@ class CartPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: primaryGreen,
         automaticallyImplyLeading: false,
+        leading: IconButton(
+          onPressed: () {
+            Get.back();
+          },
+          icon: Image.asset(AssetsImage.backIcon, width: 23, color: white),
+        ),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(Icons.person, color: white, size: 23),
+            Icon(Icons.shopping_cart, color: white, weight: 5, size: 25),
+            SizedBox(width: 3),
             Text(
-              "Your Profile",
+              "Your Cart",
               style: TextStyle(
                 color: white,
                 fontFamily: "Outfit",
@@ -34,7 +44,7 @@ class CartPage extends StatelessWidget {
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        margin: EdgeInsets.only(top: 30),
+        margin: EdgeInsets.only(top: 10),
         decoration: BoxDecoration(
           color: bgGrey,
           borderRadius: BorderRadius.only(
@@ -51,7 +61,7 @@ class CartPage extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        "Addresses",
+                        "Cart Items",
                         style: TextStyle(
                           color: black,
                           fontFamily: "Outfit",
@@ -62,7 +72,7 @@ class CartPage extends StatelessWidget {
                     ],
                   ),
                   Text(
-                    "Manage your saved addresses. Set default address and edit.",
+                    "Review your items, adjust quantities, and check out when you’re ready.",
                     style: TextStyle(
                       color: black,
                       fontFamily: "Outfit",
@@ -231,7 +241,7 @@ class CartPage extends StatelessWidget {
       ),
 
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: MyBottomNavigationBar(),
+      floatingActionButton: MyBottomNavigationBar(currentIndex: 2),
     );
   }
 }

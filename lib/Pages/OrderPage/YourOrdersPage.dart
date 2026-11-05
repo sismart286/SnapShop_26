@@ -139,7 +139,7 @@ class YourOrdersPage extends StatelessWidget {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: MyBottomNavigationBar(),
+      floatingActionButton: MyBottomNavigationBar(currentIndex: 3),
     );
   }
 }

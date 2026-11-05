@@ -34,6 +34,7 @@ class AssetsImage {
   static const emptyWishlistIcon = "assets/images/emptyWishlist.png";
   static const noOrdersIcon = "assets/icons/noOrders.png";
   static const orderBoxIcon = "assets/icons/orderBox.png";
+  static const customerCare = "assets/icons/customerCare.png";
 
   //IMAGES PATH
   static const americanexpress = "assets/images/americanexpress.png";

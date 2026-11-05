@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:snapshop/Config/Colors.dart';
 import 'package:snapshop/Config/Images.dart';
+import 'package:snapshop/Pages/AuthPage/SignUpPage.dart';
 import 'package:snapshop/Widgets/MyTextField.dart';
 import 'package:snapshop/Widgets/PrimaryButton.dart';
 
@@ -67,7 +69,9 @@ class SignInPage extends StatelessWidget {
 
                     SizedBox(height: 20),
                     PrimaryButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(() => SignUpPage());
+                      },
                       btnName: "Sign In",
                       width: 200,
                       height: 55,

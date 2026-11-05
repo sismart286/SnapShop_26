@@ -40,7 +40,7 @@ class _SplashPageState extends State<SplashPage>
 
   @override
   Widget build(BuildContext context) {
-    // SplashController splashController = Get.put(SplashController());
+    SplashController splashController = Get.put(SplashController());
     return Scaffold(
       backgroundColor: const Color(0xff04B70F),
       body: Center(

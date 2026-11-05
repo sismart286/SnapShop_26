@@ -60,11 +60,11 @@ Widget offerBanner(BuildContext context, List<String> bannerImages) {
                 margin: const EdgeInsets.only(right: 20),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: lightGrey,
+                  color: primaryExtraLightGreen,
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20.0),
-                  child: Image.asset(imagePath, fit: BoxFit.cover),
+                  child: Image.asset(imagePath, fit: BoxFit.contain),
                 ),
               );
             },

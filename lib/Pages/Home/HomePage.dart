@@ -15,6 +15,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<String> bannerImages = [
+      AssetsImage.book,
       AssetsImage.glowingskin,
       AssetsImage.electroicsOffers,
       AssetsImage.laptopOffer,
@@ -44,7 +45,7 @@ class HomePage extends StatelessWidget {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: MyBottomNavigationBar(),
+      floatingActionButton: MyBottomNavigationBar(currentIndex: 0),
     );
   }
 }
