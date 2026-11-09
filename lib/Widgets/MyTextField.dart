@@ -1,42 +1,67 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:snapshop/Config/Colors.dart';
 
-Widget MyTextField({
-  double? size = 10,
-  String? labelName = "TextField",
-  String? hintText = "Type here",
-  bool? hideText = false,
-  Color? labelTextColor = black,
-}) {
-  RxBool isVisible = true.obs;
+class MyTextField extends StatefulWidget {
+  const MyTextField({
+    super.key,
+    this.size = 10,
+    this.labelName = "TextField",
+    this.hintText = "Type here",
+    this.hideText = false,
+    this.labelTextColor = black,
+    this.readOnly = false,
+    this.controller,
+  });
 
-  return Padding(
-    padding: EdgeInsets.symmetric(horizontal: size!),
-    child: Column(
-      children: [
-        Row(
-          children: [
-            Text(
-              labelName!,
-              style: TextStyle(
-                fontFamily: "Outfit",
-                fontSize: 15,
-                color: labelTextColor,
+  final double size;
+  final String labelName;
+  final String hintText;
+  final bool hideText;
+  final Color labelTextColor;
+  final bool readOnly;
+  final TextEditingController? controller;
+
+  @override
+  State<MyTextField> createState() => _MyTextFieldState();
+}
+
+class _MyTextFieldState extends State<MyTextField> {
+  bool _obscured = true;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: widget.size),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Text(
+                widget.labelName,
+                style: TextStyle(
+                  fontFamily: "Outfit",
+                  fontSize: 15,
+                  color: widget.labelTextColor,
+                ),
               ),
+            ],
+          ),
+          const SizedBox(height: 5),
+          TextField(
+            readOnly: widget.readOnly,
+            obscureText: widget.hideText ? _obscured : false,
+            controller: widget.controller,
+            style: const TextStyle(
+              color: midBlack,
+              fontSize: 16,
+              fontFamily: "Outfit",
+              fontWeight: FontWeight.w500,
             ),
-          ],
-        ),
-        SizedBox(height: 5),
-        Obx(
-          () => TextField(
-            obscureText: isVisible.value,
-
             decoration: InputDecoration(
               filled: true,
               fillColor: white,
-              hintText: hintText!,
-              hintStyle: TextStyle(
+              hintText: widget.hintText,
+              hintStyle: const TextStyle(
                 fontFamily: "Outfit",
                 fontWeight: FontWeight.w600,
               ),
@@ -44,13 +69,15 @@ Widget MyTextField({
                 borderSide: BorderSide.none,
                 borderRadius: BorderRadius.circular(12),
               ),
-              suffixIcon: hideText == true
+              suffixIcon: widget.hideText
                   ? IconButton(
                       onPressed: () {
-                        isVisible.value = !isVisible.value;
+                        setState(() {
+                          _obscured = !_obscured;
+                        });
                       },
                       icon: Icon(
-                        isVisible.value
+                        _obscured
                             ? Icons.visibility_off
                             : Icons.visibility,
                       ),
@@ -58,8 +85,8 @@ Widget MyTextField({
                   : null,
             ),
           ),
-        ),
-      ],
-    ),
-  );
+        ],
+      ),
+    );
+  }
 }

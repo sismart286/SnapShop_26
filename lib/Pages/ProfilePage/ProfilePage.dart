@@ -1,7 +1,11 @@
+import 'dart:developer';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:snapshop/Config/Colors.dart';
 import 'package:snapshop/Config/Images.dart';
+import 'package:snapshop/Controllers/AuthController.dart';
 import 'package:snapshop/Pages/Home/HomePage.dart';
 import 'package:snapshop/Widgets/AddressSection.dart';
 import 'package:snapshop/Pages/ProfilePage/widgets/DOBAndGender.dart';
@@ -16,6 +20,8 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AuthController authController = Get.put(AuthController());
+
     return Scaffold(
       backgroundColor: primaryGreen,
       appBar: AppBar(
@@ -43,6 +49,53 @@ class ProfilePage extends StatelessWidget {
           ],
         ),
         centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () {
+              AlertDialog alertDialog = AlertDialog(
+                title: Text(
+                  "Do you want to logout?",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                ),
+                actionsAlignment: MainAxisAlignment.center,
+                actionsPadding: const EdgeInsets.only(bottom: 16),
+                actions: [
+                  CupertinoButton(
+                    child: Text(
+                      "Cancel",
+                      style: TextStyle(
+                        color: primaryDeepGreen,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                  CupertinoButton(
+                    child: Text(
+                      "Logout",
+                      style: TextStyle(
+                        color: Colors.red,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    onPressed: () {
+                      authController.signOutUser();
+                      log("User SignOut!");
+                    },
+                  ),
+                ],
+              );
+
+              showDialog(context: context, builder: (context) => alertDialog);
+            },
+            icon: Icon(Icons.logout, color: white),
+          ),
+        ],
       ),
       body: Stack(
         alignment: Alignment.center,

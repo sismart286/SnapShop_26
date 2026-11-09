@@ -3,18 +3,18 @@ import 'package:snapshop/Config/Colors.dart';
 
 Widget PrimaryButton({
   VoidCallback? onPressed,
-  String? btnName = "Primary Button",
-  double? width = 200,
-  double? height = 55,
+  String btnName = "Primary Button",
+  double width = 200,
+  double height = 55,
 }) {
   return FilledButton(
     onPressed: onPressed,
     style: FilledButton.styleFrom(
       backgroundColor: primaryGreen,
-      fixedSize: Size(width!, height!),
+      fixedSize: Size(width, height),
     ),
     child: Text(
-      btnName!,
+      btnName,
       style: TextStyle(
         fontFamily: "Outfut",
         fontSize: 20,

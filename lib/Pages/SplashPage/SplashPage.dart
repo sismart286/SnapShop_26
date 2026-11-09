@@ -4,7 +4,7 @@ import 'package:snapshop/Config/Images.dart';
 import 'package:snapshop/Controllers/SplashController.dart';
 
 class SplashPage extends StatefulWidget {
-  const new({super.key});
+  const SplashPage({super.key});
 
   @override
   State<SplashPage> createState() => _SplashPageState();
@@ -40,7 +40,7 @@ class _SplashPageState extends State<SplashPage>
 
   @override
   Widget build(BuildContext context) {
-    SplashController splashController = Get.put(SplashController());
+    Get.put(SplashController());
     return Scaffold(
       backgroundColor: const Color(0xff04B70F),
       body: Center(

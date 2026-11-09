@@ -39,14 +39,24 @@ class UserModel {
       profilePicUrl: json["profilePicUrl"],
       phoneNumber: json["phoneNumber"],
       role: json["role"],
-      cartItems: json["cartItems"],
-      wishlist: json["wishlist"],
-      orders: json["orders"],
-      addresses: json["addresses"],
+      cartItems: json["cartItems"] != null
+          ? List<String>.from(json["cartItems"])
+          : null,
+      wishlist: json["wishlist"] != null
+          ? List<String>.from(json["wishlist"])
+          : null,
+      orders: json["orders"] != null ? List<String>.from(json["orders"]) : null,
+      addresses: json["addresses"] != null
+          ? List<String>.from(json["addresses"])
+          : null,
       defaultAddressId: json["defaultAddressId"],
       activeStatus: json["activeStatus"],
-      lastOnlineStatus: json["lastOnlineStatus"],
-      createdOn: json["createdOn"],
+      lastOnlineStatus: json["lastOnlineStatus"] != null
+          ? DateTime.parse(json["lastOnlineStatus"])
+          : null,
+      createdOn: json["createdOn"] != null
+          ? DateTime.parse(json["createdOn"])
+          : null,
     );
   }
 
@@ -64,8 +74,8 @@ class UserModel {
       'addresses': addresses,
       'defaultAddressId': defaultAddressId,
       'activeStatus': activeStatus,
-      'lastOnlineStatus': lastOnlineStatus,
-      'createdOn': createdOn,
+      'lastOnlineStatus': lastOnlineStatus?.toIso8601String(),
+      'createdOn': createdOn?.toIso8601String(),
     };
   }
 }
